@@ -118,6 +118,16 @@ Run the following comand and see the ionic magic
 $ sudo ionic generate page camera
 > ionic generate page camera
 ````
-
+Now we have new folder src/pages/camera with following files, let's explore them.
+  - camera.html
+    - Remove the comments on the top
+    - Update line 4, Change camera to Camera
+  - camera.modudle.ts - let's delete this, we will use app.module.ts
+  - camera.scss 
+  - camera.ts
+    
+    
+    
+  
 
 
