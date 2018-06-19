@@ -27,11 +27,13 @@ $ sudo ionic start ionic-deep-dive tabs
 ```
 ```
 Would you like to integrate your new app with Cordova to target native iOS and
-Android? Y
+Android? (Y/n) Y
 ````
 ```
 Install the free Ionic Pro SDK and connect your app? (Y/n) n
 ```
+
+It will take few minutes to complete the process, and your skeleton application is ready to test. 
 
 If you want put your source code to the git repo, please do so using following commands
 ```
@@ -41,6 +43,33 @@ $ sudo git commit -m "Initial commit" --no-gpg-sign
 > git add -A
 > git commit -m "Initial commit" --no-gpg-sign
 ```
+
+## Testing App
+You can test your application on browser, emulator/simulator or actual device.
+
+Testing on Browser
+```
+$ cd ionic-deep-dive/
+$ sudo ionic serve
+
+> cd ionic-deep-dive/	
+> ionic serve
+```
+
+## Add Platform
+```
+$ sudo ionic cordova platform add ios
+> ionic cordova platform add android
+```
+
+
+Browse the Url (http://localhost:8100/) on your browser, will appear as below in picture. This is a template application, where we will start working and add our own functionalities.  We will modify this application with 4 tabs and each tab for following functions.
+
+- Tab1 = Camera
+- Tab2 = Barcode Scanner
+- Tab3 = Torch light
+- Tab4 = Media Player
+
 
 // Create a new project
 $ ionic start meetup-demo tabs
