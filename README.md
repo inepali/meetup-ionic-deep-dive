@@ -5,14 +5,14 @@
 - NPM - v4.2.0
 - Ionic - v3.20.0
 - Cordova - 8.0.0
-- VSCode or any other text editors
+- VSCode
 
 ###### Application Editor
-Visual Studio Code - (https://code.visualstudio.com)
+Visual Studio Code - https://code.visualstudio.com
 
 ###### NodeJS and NPM
-(https://nodejs.org/download/release/v7.10.1/node-v7.10.1-x86.msi) - Windows
-(https://nodejs.org/download/release/v7.10.1/node-v7.10.1.pkg) - Mac
+https://nodejs.org/download/release/v7.10.1/node-v7.10.1-x86.msi - Windows
+https://nodejs.org/download/release/v7.10.1/node-v7.10.1.pkg - Mac
 
 ###### Ionic and Cordova
 Open a command prompt (windows)/Terminal Window (mac/linux) and enter the following command. You may need add sudo in your mac/linux computer. -g stands for global and ionic and cordova will install in your global scope
@@ -56,7 +56,7 @@ $ sudo ionic serve
 > ionic serve
 ```
 
-Browse the url (http://localhost:8100/) on your browser, normally default browser automatically opened.
+Browse the url http://localhost:8100/ on your browser, normally default browser automatically opened.
 
 ## Add Platform
 ```
@@ -90,6 +90,10 @@ The template application is ready and modify it with 4 tabs and each tab for fol
 - Tab2 = Barcode Scanner
 - Tab3 = Torch light
 - Tab4 = Media Player
+
+Let's do come code clean up
+- the project folder on VSCode.
+- 
 
 
 
