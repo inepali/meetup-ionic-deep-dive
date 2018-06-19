@@ -171,7 +171,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
  declarations: [
     MyApp,
     CameraPage,
-    BarcodePage,
+    Text2SpeechPage,
     TorchPage,
     PlayerPage,
     TabsPage
@@ -182,14 +182,13 @@ import { NgModule, ErrorHandler } from '@angular/core';
  entryComponents: [
     MyApp,
     CameraPage,
-    BarcodePage,
+    Text2SpeechPage,
     TorchPage,
     PlayerPage,
     TabsPage
   ],
   providers: [
     StatusBar,
-    Camera,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
@@ -250,6 +249,19 @@ export class CameraPage {
 
 ```
 
+#### app.module.ts
+```
+  .....
+  
+  providers: [
+    StatusBar,
+    SplashScreen,
+    Camera
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
+ ```
+
+
 ## Finishing Native Text to Speech
 Text 2 Speech - https://ionicframework.com/docs/native/text-to-speech/
 ```
@@ -301,5 +313,18 @@ export class Text2speechPage {
   }
 }
 ````
+
+#### app.module.ts
+```
+  .....
+  
+  providers: [
+    StatusBar,
+    SplashScreen,
+    TextToSpeech,
+    Camera
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
+ ```
 
 
