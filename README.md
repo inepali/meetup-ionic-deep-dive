@@ -19,18 +19,18 @@ https://nodejs.org/download/release/v7.10.1/node-v7.10.1.pkg - Mac
 ##### Ionic and Cordova
 Open a command prompt (windows)/Terminal Window (mac/linux) and enter the following command. You may need add sudo in your mac/linux computer. -g stands for global and ionic and cordova will install in your global scope
 ```
-$ sudo npm install -g ionic cordova 
-> npm install -g ionic cordova
+$ npm install -g ionic cordova 
 ```
 Now create a tabs based Hybrid Mobile Application using Ionic application using following 
 ```
-$ sudo ionic start ionic-deep-dive tabs
-> ionic start ionic-deep-dive tabs
+$ ionic start ionic-deep-dive tabs
 ```
+
 ```
 Would you like to integrate your new app with Cordova to target native iOS and
 Android? (Y/n) Y
 ````
+
 ```
 Install the free Ionic Pro SDK and connect your app? (Y/n) n
 ```
@@ -39,8 +39,8 @@ It will take few minutes to complete the process, and your skeleton application 
 
 If you want put your source code to the git repo, please do so using following commands
 ```
-$ sudo git add -A
-$ sudo git commit -m "Initial commit" --no-gpg-sign
+$ git add -A
+$ git commit -m "Initial commit" --no-gpg-sign
 ```
 
 ## Testing App
@@ -49,34 +49,34 @@ You can test your application on browser, emulator/simulator or actual device.
 ### Testing on Browser
 ```
 $ cd ionic-deep-dive/
-$ sudo ionic serve
+$ ionic serve
 ```
 
 Browse the url http://localhost:8100/ on your browser, normally default browser automatically opened.
 
 ### Add Platform
 ```
-$ sudo ionic cordova platform add ios
+$ ionic cordova platform add ios
 ```
 
 ### Testing on Emulator/Simulate
 You must have Emulator in working conditions, on windows Android SDK and Android Virtual Device must configure first or Android Studio installed, on Mac XCode installed. 
 
 ```
-$ sudo ionic cordova emulate
+$ ionic cordova emulate
 ```
 
 ### Testing on Device
 Testing device must connected with the computer using USB cable, any security or authentication must be allowed. For Android device you need to enable developer mode and USB debuging is turned on.
 
 ```
-$ sudo ionic cordova run
+$ ionic cordova run
 ```
 
 To get more help for run the following help command 
 
 ```
-$ sudo ionic cordova --help
+$ ionic cordova --help
 ```
 
 #### Let's do some code clean up
@@ -94,7 +94,7 @@ $ sudo ionic cordova --help
 ### Ionic CLI Help
 Don'f forget to the check it out, there are lots of commands available.
 ```
-$ sudo ionic --help
+$ ionic --help
 ```
 
 ## Updating Application
@@ -109,13 +109,13 @@ The template application is ready and modify it with 4 tabs and each tab for fol
 ### Add Tab Pages
 Run the following comand and see the ionic magic
 ```
-$ sudo ionic generate page camera
+$ ionic generate page camera
 
-$ sudo ionic generate page Text2speech
+$ ionic generate page Text2speech
 
-$ sudo ionic generate page torch
+$ ionic generate page torch
 
-$ sudo ionic generate page player
+$ ionic generate page player
 ````
 Now we four new folders src/pages, let's explore them and Remove the x.module.ts from each folder, we will use app.module.ts
 Update <ion-title></ion-title>, Proper Camelcase Heading and also remove any unwanted comments if you want.
@@ -202,8 +202,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 ## Finishing Native Camera
 Ionic Native Camera - https://ionicframework.com/docs/native/camera/
 ```
-$ sudo ionic cordova plugin add cordova-plugin-camera
-$ sudo npm install --save @ionic-native/camera
+$ ionic cordova plugin add cordova-plugin-camera
+$ npm install --save @ionic-native/camera
 ```
 ##### camera.ts
 ```
@@ -332,8 +332,8 @@ export class Text2speechPage {
 ## Finishing Native Flashlight
 Flashlight - https://ionicframework.com/docs/native/flashlight/
 ```
-$ sudo ionic cordova plugin add cordova-plugin-flashlight
-$ sudo npm install --save @ionic-native/flashlight
+$ ionic cordova plugin add cordova-plugin-flashlight
+$ npm install --save @ionic-native/flashlight
 ```
 
 #### torch.html
