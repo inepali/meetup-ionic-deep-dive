@@ -2,19 +2,19 @@
 
 ## Pre-requesisits
 - Node.js - v7.10.1
-- NPM - v6.0.1
+- NPM - v4.2.0
 - Ionic - v3.20.0
 - Cordova - 8.0.0
+- VSCode or any other text editors
 
-Let’s install/update your system as mentioned in the pre-requisites.
+###### Application Editor
+Visual Studio Code - (https://code.visualstudio.com)
 
 ###### NodeJS and NPM
-
 (https://nodejs.org/download/release/v7.10.1/node-v7.10.1-x86.msi) - Windows
 (https://nodejs.org/download/release/v7.10.1/node-v7.10.1.pkg) - Mac
 
 ###### Ionic and Cordova
-
 Open a command prompt (windows)/Terminal Window (mac/linux) and enter the following command. You may need add sudo in your mac/linux computer. -g stands for global and ionic and cordova will install in your global scope
 ```
 $ sudo npm install -g ionic cordova 
@@ -84,7 +84,7 @@ $ sudo ionic cordova --help
 > ionic cordova --help
 ```
 
- will appear as below in picture. This is a template application, where we will start working and add our own functionalities.  We will modify this application with 4 tabs and each tab for following functions.
+The template application is ready and modify it with 4 tabs and each tab for following functions.
 
 - Tab1 = Camera
 - Tab2 = Barcode Scanner
@@ -92,19 +92,4 @@ $ sudo ionic cordova --help
 - Tab4 = Media Player
 
 
-// Create a new project
-$ ionic start meetup-demo tabs
-
-// Run app in Browser
-$ ionic serve
-
-// let select your platform
-$ ionic platform add iOS
-
-// build app
-$ ionic build ios
-
-// run your app simulator or device
-// if a mobile device is connected app will run on the // device, if not it will try to find out simulator
-$ ionic run
 
