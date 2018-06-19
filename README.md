@@ -91,9 +91,16 @@ The template application is ready and modify it with 4 tabs and each tab for fol
 - Tab3 = Torch light
 - Tab4 = Media Player
 
-Let's do come code clean up
-- the project folder on VSCode.
-- 
+Let's do some code clean up
+- Open the project folder on VSCode 
+  ```
+  $ sudo code .
+  > code .
+  ```
+  
+- Navigate src/pages folder
+- Delete about, contact and home folder (you may need some permision to edit/delete these files on Mac)
+
 
 ## Ionic CLI Help
 Don'f forget to the check it out, there are lots of commands available.
@@ -101,4 +108,5 @@ Don'f forget to the check it out, there are lots of commands available.
 ionic --help
 ```
 
+n
 
