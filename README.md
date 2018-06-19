@@ -341,6 +341,7 @@ $ sudo npm install --save @ionic-native/flashlight
   <ion-content padding>
       <button ion-button (click)="on()">Turn On</button>
     <button ion-button (click)="off()">Turn Off</button>
+     <button ion-button (click)="sos()">SOS On</button>
   </ion-content>
 ````
 
@@ -365,6 +366,12 @@ export class TorchPage {
 
   off(){
     this.flashlight.switchOff();
+  }
+  
+   sos()
+  {
+    // TODO
+    //three short flashes, three long flashes, three short flashes
   }
 }
 ````
