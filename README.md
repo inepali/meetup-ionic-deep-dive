@@ -8,12 +8,12 @@
 
 Let’s install/update your system as mentioned in the pre-requisites.
 
-NodeJS and NPM
+###### NodeJS and NPM
 
 (https://nodejs.org/download/release/v7.10.1/node-v7.10.1-x86.msi) - Windows
 (https://nodejs.org/download/release/v7.10.1/node-v7.10.1.pkg) - Mac
 
-Ionic and Cordova
+###### Ionic and Cordova
 
 Open a command prompt (windows)/Terminal Window (mac/linux) and enter the following command. You may need add sudo in your mac/linux computer. -g stands for global and ionic and cordova will install in your global scope
 ```
@@ -56,14 +56,35 @@ $ sudo ionic serve
 > ionic serve
 ```
 
+Browse the url (http://localhost:8100/) on your browser, normally default browser automatically opened.
+
 ## Add Platform
 ```
 $ sudo ionic cordova platform add ios
 > ionic cordova platform add android
 ```
+## Testing on Emulator/Simulate
+You must have Emulator in working conditions, on windows Android SDK and Android Virtual Device must configure first or Android Studio installed, on Mac XCode installed. 
 
+```
+$ sudo ionic cordova emulate
+> ionic cordova emulate
+```
+## Testing on Device
+Testing device must connected with the computer using USB cable, any security or authentication must be allowed. For Android device you need to enable developer mode and USB debuging is turned on.
 
-Browse the Url (http://localhost:8100/) on your browser, will appear as below in picture. This is a template application, where we will start working and add our own functionalities.  We will modify this application with 4 tabs and each tab for following functions.
+```
+$ sudo ionic cordova run
+> ionic cordova run
+```
+
+To get more help for run the following help command 
+```
+$ sudo ionic cordova --help
+> ionic cordova --help
+```
+
+ will appear as below in picture. This is a template application, where we will start working and add our own functionalities.  We will modify this application with 4 tabs and each tab for following functions.
 
 - Tab1 = Camera
 - Tab2 = Barcode Scanner
