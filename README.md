@@ -7,14 +7,14 @@
 - Cordova - 8.0.0
 - VSCode
 
-###### Application Editor
+##### Application Editor
 Visual Studio Code - https://code.visualstudio.com
 
-###### NodeJS and NPM
+##### NodeJS and NPM
 https://nodejs.org/download/release/v7.10.1/node-v7.10.1-x86.msi - Windows
 https://nodejs.org/download/release/v7.10.1/node-v7.10.1.pkg - Mac
 
-###### Ionic and Cordova
+##### Ionic and Cordova
 Open a command prompt (windows)/Terminal Window (mac/linux) and enter the following command. You may need add sudo in your mac/linux computer. -g stands for global and ionic and cordova will install in your global scope
 ```
 $ sudo npm install -g ionic cordova 
@@ -47,7 +47,7 @@ $ sudo git commit -m "Initial commit" --no-gpg-sign
 ## Testing App
 You can test your application on browser, emulator/simulator or actual device.
 
-Testing on Browser
+### Testing on Browser
 ```
 $ cd ionic-deep-dive/
 $ sudo ionic serve
@@ -58,19 +58,19 @@ $ sudo ionic serve
 
 Browse the url http://localhost:8100/ on your browser, normally default browser automatically opened.
 
-## Add Platform
+### Add Platform
 ```
 $ sudo ionic cordova platform add ios
 > ionic cordova platform add android
 ```
-## Testing on Emulator/Simulate
+### Testing on Emulator/Simulate
 You must have Emulator in working conditions, on windows Android SDK and Android Virtual Device must configure first or Android Studio installed, on Mac XCode installed. 
 
 ```
 $ sudo ionic cordova emulate
 > ionic cordova emulate
 ```
-## Testing on Device
+### Testing on Device
 Testing device must connected with the computer using USB cable, any security or authentication must be allowed. For Android device you need to enable developer mode and USB debuging is turned on.
 
 ```
@@ -84,7 +84,7 @@ $ sudo ionic cordova --help
 > ionic cordova --help
 ```
 
-Let's do some code clean up
+#### Let's do some code clean up
 - Open the project folder on VSCode 
   ```
   $ sudo code .
@@ -97,7 +97,7 @@ Let's do some code clean up
 - Again there is code error, remove these too.
 - On src/tabs/tabs.ts - there are also some run times errors, we will update late just leave it as is.
 
-## Ionic CLI Help
+### Ionic CLI Help
 Don'f forget to the check it out, there are lots of commands available.
 ```
 ionic --help
@@ -112,20 +112,99 @@ The template application is ready and modify it with 4 tabs and each tab for fol
 - Tab3 = Torch light
 - Tab4 = Media Player
 
-### Add Camera Functions
+### Add Tab Pages
 Run the following comand and see the ionic magic
 ```
 $ sudo ionic generate page camera
 > ionic generate page camera
+
+$ sudo ionic generate page barcode
+> ionic generate page barcode
+
+$ sudo ionic generate page torch
+> ionic generate page torch
+
+$ sudo ionic generate page player
+> ionic generate page player
 ````
-Now we have new folder src/pages/camera with following files, let's explore them.
-  - camera.html
-    - Remove the comments on the top
-    - Update line 4, Change camera to Camera
-  - camera.modudle.ts - let's delete this, we will use app.module.ts
-  - camera.scss 
-  - camera.ts
-    
+Now we four new folders src/pages, let's explore them and Remove the x.module.ts from each folder, we will use app.module.ts
+Update <ion-title></ion-title>, Proper Camelcase Heading and also remove any unwanted comments if you want.
+- camera
+- barcode
+- torch
+- player
+
+Once we remove x.module.ts, on each x.tx file, also remove @IonicPage annotation and IonicPage from import section. Now, let's update the tab.ts and tabs.html
+
+##### tabs.ts
+````
+import { PlayerPage } from './../player/player';
+import { TorchPage } from './../torch/torch';
+import { BarcodePage } from './../barcode/barcode';
+import { CameraPage } from './../camera/camera';
+import { Component } from '@angular/core';
+
+@Component({
+  templateUrl: 'tabs.html'
+})
+export class TabsPage {
+
+  tab1Root = CameraPage;
+  tab2Root = BarcodePage;
+  tab3Root = TorchPage;
+  tab4Root = PlayerPage
+
+  constructor() {
+
+  }
+}
+``````
+
+##### tabs.html
+````
+<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="Camera" tabIcon="camera"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Barcode" tabIcon="barcode"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Torch" tabIcon="flash"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Player" tabIcon="play"></ion-tab>
+</ion-tabs>
+````
+
+#### app.module.ts
+```
+import { PlayerPage } from './../pages/player/player';
+import { BarcodePage } from './../pages/barcode/barcode';
+import { CameraPage } from './../pages/camera/camera';
+import { NgModule, ErrorHandler } from '@angular/core';
+
+......
+
+ declarations: [
+    MyApp,
+    CameraPage,
+    BarcodePage,
+    TorchPage,
+    PlayerPage,
+    TabsPage
+  ]
+  
+ .......
+ 
+ entryComponents: [
+    MyApp,
+    CameraPage,
+    BarcodePage,
+    TorchPage,
+    PlayerPage,
+    TabsPage
+  ]
+  
+  `````
+
+
+
+
+
     
     
   
