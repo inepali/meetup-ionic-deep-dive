@@ -109,7 +109,7 @@ Run the following comand and see the ionic magic
 ```
 $ sudo ionic generate page camera
 
-$ sudo ionic generate page barcode
+$ sudo ionic generate page Text2speech
 
 $ sudo ionic generate page torch
 
@@ -118,7 +118,7 @@ $ sudo ionic generate page player
 Now we four new folders src/pages, let's explore them and Remove the x.module.ts from each folder, we will use app.module.ts
 Update <ion-title></ion-title>, Proper Camelcase Heading and also remove any unwanted comments if you want.
 - camera
-- barcode
+- Text2speech
 - torch
 - player
 
@@ -128,7 +128,7 @@ Once we remove x.module.ts, on each x.tx file, also remove @IonicPage annotation
 ````
 import { PlayerPage } from './../player/player';
 import { TorchPage } from './../torch/torch';
-import { BarcodePage } from './../barcode/barcode';
+import { BarcodePage } from './../barcode/Text2speech';
 import { CameraPage } from './../camera/camera';
 import { Component } from '@angular/core';
 
@@ -138,7 +138,7 @@ import { Component } from '@angular/core';
 export class TabsPage {
 
   tab1Root = CameraPage;
-  tab2Root = BarcodePage;
+  tab2Root = Text2speechPage;
   tab3Root = TorchPage;
   tab4Root = PlayerPage
 
@@ -153,7 +153,7 @@ Ionic Icons @ https://ionicframework.com/docs/ionicons/
 ````
 <ion-tabs>
   <ion-tab [root]="tab1Root" tabTitle="Camera" tabIcon="camera"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="Barcode" tabIcon="barcode"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Text 2 Speech" tabIcon="barcode"></ion-tab>
   <ion-tab [root]="tab3Root" tabTitle="Torch" tabIcon="flash"></ion-tab>
   <ion-tab [root]="tab3Root" tabTitle="Player" tabIcon="play"></ion-tab>
 </ion-tabs>
@@ -186,8 +186,14 @@ import { NgModule, ErrorHandler } from '@angular/core';
     TorchPage,
     PlayerPage,
     TabsPage
+  ],
+  providers: [
+    StatusBar,
+    Camera,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
-  
+    
   `````
 
 **_So far so good, please check it out on browser. Once you include the native function, you need to test on Emulator/Simulator or on device_**.
@@ -244,8 +250,56 @@ export class CameraPage {
 
 ```
 
-    
-    
+## Finishing Native Text to Speech
+Text 2 Speech - https://ionicframework.com/docs/native/text-to-speech/
+```
+$ ionic cordova plugin add cordova-plugin-tts
+$ npm install --save @ionic-native/text-to-speech
+```
+
+#### text2spech.html
+
+```
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      
+      <ion-textarea type="text" [(ngModel)]="text2Read" placeholder="Enter text to read"></ion-textarea>
+    </ion-item>
+  </ion-list>
   
+  <button ion-button (click)="speak()">Speak</button>
+</ion-content>
+```
+
+#### text2speech.ts
+````
+import { Component } from '@angular/core';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
+
+
+
+@Component({
+  selector: 'page-text2speech',
+  templateUrl: 'text2speech.html',
+})
+export class Text2speechPage {
+
+  text2Read: string;
+  constructor(private tts: TextToSpeech) {
+  }
+
+  speak()
+  {
+    this.tts.speak(this.text2Read).then(() => console.log('Success')).catch((reason: any) => console.log(reason));
+  }
+
+  listen()
+  {
+    // TODO
+    // Speech Recognition
+  }
+}
+````
 
 
