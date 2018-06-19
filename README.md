@@ -330,7 +330,7 @@ export class Text2speechPage {
  ```
  
 ## Finishing Native Flashlight
-Text 2 Speech - https://ionicframework.com/docs/native/text-to-speech/
+Flashlight - https://ionicframework.com/docs/native/flashlight/
 ```
 $ sudo ionic cordova plugin add cordova-plugin-flashlight
 $ sudo npm install --save @ionic-native/flashlight
@@ -390,4 +390,11 @@ providers: [
   ]
 ````
 
+## Finishing Native Media Player
+Media - https://ionicframework.com/docs/native/media/
+```
+$ ionic cordova plugin add cordova-plugin-media
+$ npm install --save @ionic-native/media
+```
 
+Let's continue and finish up.
