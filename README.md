@@ -1,5 +1,12 @@
-# meetup-ionic-deep-dive
-Deep Dive Ionic Framework, Native Mobile Applications
+# Ionic Framework - A Deep Dive
+
+Camera App
+Barcode Scanner
+Torch Light
+Media Player
+
+
+Pre-requesisits 
 
 
 // Create a new project
