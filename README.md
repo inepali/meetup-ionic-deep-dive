@@ -170,7 +170,7 @@ export class TabsPage {
 </ion-tabs>
 ````
 
-#### app.module.ts
+##### app.module.ts
 ```
 import { PlayerPage } from './../pages/player/player';
 import { BarcodePage } from './../pages/barcode/barcode';
@@ -201,6 +201,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
   
   `````
 
+** _So far so good, please check it out on browser. Once you include the native function, you need to test on Emulator/Simulator or on device_ **.
 
 
 
