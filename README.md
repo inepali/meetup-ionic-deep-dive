@@ -6,6 +6,8 @@
 - Ionic - v3.20.0
 - Cordova - 8.0.0
 - VSCode
+- XCode for Mac
+- AndroidStudio 
 
 ##### Application Editor
 Visual Studio Code - https://code.visualstudio.com
@@ -128,7 +130,7 @@ Once we remove x.module.ts, on each x.tx file, also remove @IonicPage annotation
 ````
 import { PlayerPage } from './../player/player';
 import { TorchPage } from './../torch/torch';
-import { BarcodePage } from './../barcode/Text2speech';
+import { Text2speech } from './../barcode/Text2speech';
 import { CameraPage } from './../camera/camera';
 import { Component } from '@angular/core';
 
@@ -326,5 +328,59 @@ export class Text2speechPage {
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
  ```
+ 
+## Finishing Native Flashlight
+Text 2 Speech - https://ionicframework.com/docs/native/text-to-speech/
+```
+$ sudo ionic cordova plugin add cordova-plugin-flashlight
+$ sudo npm install --save @ionic-native/flashlight
+```
+
+#### torch.html
+````
+  <ion-content padding>
+      <button ion-button (click)="on()">Turn On</button>
+    <button ion-button (click)="off()">Turn Off</button>
+  </ion-content>
+````
+
+#### torch.ts
+```
+import { Component } from '@angular/core';
+import { Flashlight } from '@ionic-native/Flashlight';
+
+@Component({
+  selector: 'page-torch',
+  templateUrl: 'torch.html',
+})
+export class TorchPage {
+
+  constructor(private flashlight: Flashlight) {
+  }
+
+  on()
+  {
+    this.flashlight.switchOn();
+  }
+
+  off(){
+    this.flashlight.switchOff();
+  }
+}
+````
+
+#### app.module.ts
+````
+........
+
+providers: [
+    StatusBar,
+    Camera,
+    TextToSpeech,
+    Flashlight,
+    SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
+````
 
 
