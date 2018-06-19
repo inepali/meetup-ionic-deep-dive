@@ -198,6 +198,51 @@ Ionic Native Camera - https://ionicframework.com/docs/native/camera/
 $ sudo ionic cordova plugin add cordova-plugin-camera
 $ sudo npm install --save @ionic-native/camera
 ```
+##### camera.ts
+```
+import { Component } from '@angular/core';
+import { Camera } from '@ionic-native/camera';
+
+@Component({
+  selector: 'page-camera',
+  templateUrl: 'camera.html',
+})
+export class CameraPage {
+
+  public base64Image: string;
+  constructor(private camera  : Camera) {
+
+  }
+
+  takePicture(){
+    this.camera.getPicture({
+          quality: 100,
+          destinationType: this.camera.DestinationType.DATA_URL,
+          encodingType: this.camera.EncodingType.JPEG,
+          mediaType: this.camera.MediaType.PICTURE
+      }).then((imageData) => {
+      this.base64Image = this.base64Image = "data:image/jpeg;base64," + imageData; 
+      console.log(imageData);
+    })
+  }
+}
+```
+##### camera.html
+
+```
+.....
+
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+      <img [src]="base64Image" *ngIf="base64Image" />
+    </ion-item>
+  </ion-card>
+
+  <button ion-button (click)="takePicture()">Take Picture</button>
+</ion-content>
+
+```
 
     
     
