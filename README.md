@@ -95,5 +95,10 @@ Let's do come code clean up
 - the project folder on VSCode.
 - 
 
+## Ionic CLI Help
+Don'f forget to the check it out, there are lots of commands available.
+```
+ionic --help
+```
 
 
