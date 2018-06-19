@@ -1,12 +1,13 @@
 # Ionic Framework - A Deep Dive
 
-Camera App
+<ul><li>
+  Camera App</li>
 Barcode Scanner
 Torch Light
 Media Player
 
 
-Pre-requesisits 
+<h2>Pre-requesisits</h2>
 
 
 // Create a new project
