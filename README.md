@@ -397,4 +397,4 @@ $ ionic cordova plugin add cordova-plugin-media
 $ npm install --save @ionic-native/media
 ```
 
-Let's continue and finish up.
+By now you are expert developing mobile app using Ionic Framework. Let's continue and finish up.
