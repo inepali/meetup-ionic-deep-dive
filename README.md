@@ -84,13 +84,6 @@ $ sudo ionic cordova --help
 > ionic cordova --help
 ```
 
-The template application is ready and modify it with 4 tabs and each tab for following functions.
-
-- Tab1 = Camera
-- Tab2 = Barcode Scanner
-- Tab3 = Torch light
-- Tab4 = Media Player
-
 Let's do some code clean up
 - Open the project folder on VSCode 
   ```
@@ -100,7 +93,9 @@ Let's do some code clean up
   
 - Navigate src/pages folder
 - Delete about, contact and home folder (you may need some permision to edit/delete these files on Mac)
-
+- From src/app folder, open app.module.ts -- there are some run-times error becasue of folder we just deleted. Remove these lines as well
+- Again there is code error, remove these too.
+- On src/tabs/tabs.ts - there are also some run times errors, we will update late just leave it as is.
 
 ## Ionic CLI Help
 Don'f forget to the check it out, there are lots of commands available.
@@ -108,5 +103,21 @@ Don'f forget to the check it out, there are lots of commands available.
 ionic --help
 ```
 
-n
+## Updating Application
+
+The template application is ready and modify it with 4 tabs and each tab for following functions.
+
+- Tab1 = Camera
+- Tab2 = Barcode Scanner
+- Tab3 = Torch light
+- Tab4 = Media Player
+
+### Add Camera Functions
+Run the following comand and see the ionic magic
+```
+$ sudo ionic generate page camera
+> ionic generate page camera
+````
+
+
 
