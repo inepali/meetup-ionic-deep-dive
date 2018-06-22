@@ -130,7 +130,7 @@ Once we remove x.module.ts, on each x.tx file, also remove @IonicPage annotation
 ````
 import { PlayerPage } from './../player/player';
 import { TorchPage } from './../torch/torch';
-import { Text2speech } from './../barcode/Text2speech';
+import { Text2speech } from './../Text2speech/Text2speech';
 import { CameraPage } from './../camera/camera';
 import { Component } from '@angular/core';
 
@@ -164,7 +164,7 @@ Ionic Icons @ https://ionicframework.com/docs/ionicons/
 ##### app.module.ts
 ```
 import { PlayerPage } from './../pages/player/player';
-import { BarcodePage } from './../pages/barcode/barcode';
+import { Text2speech } from './../pages/Text2speech/Text2speech';
 import { CameraPage } from './../pages/camera/camera';
 import { NgModule, ErrorHandler } from '@angular/core';
 
@@ -397,4 +397,4 @@ $ ionic cordova plugin add cordova-plugin-media
 $ npm install --save @ionic-native/media
 ```
 
-By now you are expert developing mobile app using Ionic Framework. Let's continue and finish up.
+By now you are expert to develop mobile app using Ionic Framework. Let's continue and finish up.
